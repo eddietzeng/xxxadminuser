@@ -7,7 +7,11 @@ definer_user=mysql.sys
 definer_host=localhost
 suid=0
 with_check_option=0
+<<<<<<< HEAD
 timestamp=2021-08-19 07:37:38
+=======
+timestamp=2021-08-13 04:06:39
+>>>>>>> b9743c39015e8e91962e2bcc9896317aa1b95687
 create-version=1
 source=SELECT IF(user IS NULL, \'background\', user) AS user, SUBSTRING_INDEX(event_name, \'/\', -1) AS statement, count_star AS total, sys.format_time(sum_timer_wait) AS total_latency, sys.format_time(max_timer_wait) AS max_latency, sys.format_time(sum_lock_time) AS lock_latency, sum_rows_sent AS rows_sent, sum_rows_examined AS rows_examined, sum_rows_affected AS rows_affected, sum_no_index_used + sum_no_good_index_used AS full_scans FROM performance_schema.events_statements_summary_by_user_by_event_name WHERE sum_timer_wait != 0 ORDER BY user, sum_timer_wait DESC
 client_cs_name=utf8

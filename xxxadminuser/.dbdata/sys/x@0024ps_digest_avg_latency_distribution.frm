@@ -7,7 +7,11 @@ definer_user=mysql.sys
 definer_host=localhost
 suid=0
 with_check_option=0
+<<<<<<< HEAD
 timestamp=2021-08-19 07:37:38
+=======
+timestamp=2021-08-13 04:06:39
+>>>>>>> b9743c39015e8e91962e2bcc9896317aa1b95687
 create-version=1
 source=SELECT COUNT(*) cnt,  ROUND(avg_timer_wait/1000000) AS avg_us FROM performance_schema.events_statements_summary_by_digest GROUP BY avg_us
 client_cs_name=utf8

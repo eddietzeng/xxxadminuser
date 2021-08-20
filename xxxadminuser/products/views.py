@@ -5,7 +5,10 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Product, User
+<<<<<<< HEAD
 from .producer import publish
+=======
+>>>>>>> b9743c39015e8e91962e2bcc9896317aa1b95687
 from .serializers import ProductSerializer
 
 
@@ -19,7 +22,10 @@ class ProductViewSet(viewsets.ViewSet):
         serializer = ProductSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+<<<<<<< HEAD
         publish("product_created", serializer.data)
+=======
+>>>>>>> b9743c39015e8e91962e2bcc9896317aa1b95687
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     def retrieve(self, request, pk=None):  # /api/products/<str:id>
@@ -29,16 +35,25 @@ class ProductViewSet(viewsets.ViewSet):
 
     def update(self, request, pk=None):
         product = Product.objects.get(id=pk)
+<<<<<<< HEAD
         serializer = ProductSerializer(instance=product, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         publish("product_updated", serializer.data)
+=======
+        serializer = Prod uctSerializer(instance=product, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+>>>>>>> b9743c39015e8e91962e2bcc9896317aa1b95687
         return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
 
     def destroy(self, request, pk=None):
         product = Product.objects.get(id=pk)
         product.delete()
+<<<<<<< HEAD
         publish("product_deleted", pk)
+=======
+>>>>>>> b9743c39015e8e91962e2bcc9896317aa1b95687
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 

@@ -7,7 +7,11 @@ definer_user=mysql.sys
 definer_host=localhost
 suid=0
 with_check_option=0
+<<<<<<< HEAD
 timestamp=2021-08-19 08:06:04
+=======
+timestamp=2021-08-16 07:07:28
+>>>>>>> b9743c39015e8e91962e2bcc9896317aa1b95687
 create-version=1
 source=SELECT SUBSTRING_INDEX(event_name, \'/\', -2) AS event_name, count_star AS total, sum_timer_wait AS total_latency, avg_timer_wait AS avg_latency, max_timer_wait AS max_latency, sum_timer_read AS read_latency, sum_timer_write AS write_latency, sum_timer_misc AS misc_latency, count_read, sum_number_of_bytes_read AS total_read, IFNULL(sum_number_of_bytes_read / NULLIF(count_read, 0), 0) AS avg_read, count_write, sum_number_of_bytes_write AS total_written, IFNULL(sum_number_of_bytes_write / NULLIF(count_write, 0), 0) AS avg_written FROM performance_schema.file_summary_by_event_name  WHERE event_name LIKE \'wait/io/file/%\' AND count_star > 0 ORDER BY sum_timer_wait DESC
 client_cs_name=utf8

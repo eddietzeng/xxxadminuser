@@ -7,7 +7,11 @@ definer_user=mysql.sys
 definer_host=localhost
 suid=0
 with_check_option=0
+<<<<<<< HEAD
 timestamp=2021-08-19 07:37:38
+=======
+timestamp=2021-08-13 04:06:38
+>>>>>>> b9743c39015e8e91962e2bcc9896317aa1b95687
 create-version=1
 source=SELECT event_name, current_count_used AS current_count, current_number_of_bytes_used AS current_alloc, IFNULL(current_number_of_bytes_used / NULLIF(current_count_used, 0), 0) AS current_avg_alloc, high_count_used AS high_count, high_number_of_bytes_used AS high_alloc, IFNULL(high_number_of_bytes_used / NULLIF(high_count_used, 0), 0) AS high_avg_alloc FROM performance_schema.memory_summary_global_by_event_name WHERE current_number_of_bytes_used > 0 ORDER BY current_number_of_bytes_used DESC
 client_cs_name=utf8

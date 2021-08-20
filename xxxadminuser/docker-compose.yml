@@ -4,13 +4,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+<<<<<<< HEAD
     command: "python manage.py runserver 0.0.0.0:8000"
+=======
+>>>>>>> b9743c39015e8e91962e2bcc9896317aa1b95687
     ports:
       - 8000:8000
     volumes:
       - .:/app
     depends_on:
       - db
+<<<<<<< HEAD
   queue:
     build:
       context: .
@@ -18,6 +22,8 @@ services:
     command: "python consumer.py"
     depends_on:
       - db
+=======
+>>>>>>> b9743c39015e8e91962e2bcc9896317aa1b95687
   db:
     image: mysql:5.7.22
     restart: always
